@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>Галерея(ЛР №3 Web-дизайн)</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script type="text/javascript" src="jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="ajaxupload.js"></script>
+    <script type="text/javascript" src="gallery.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Галерея</h1>
+        <div id="menu">
+            <div id="uploadBtn" class="mbtn">Завантажити</div>
+            <div id="slideShowBtn" class="mbtn">Слайдшоу</div>
+        </div>
+        <div id="images">
+        </div>
+    </div>
+    <div id="upload" class="popup">
+        <div id="goUpload">Файл:</div>
+        <img id="loadingImg" src="gif/load.gif" alt="Uploading"/>
+        <div id="additional">
+            Ім'я: <input type="text" name="title" value=""/><br />
+            Опис: <input type="text" name="descr"/>
+        </div>
+        <button id="goUploadBtn">Завантажити</button>
+
+    </div>
+    <div id="slideShow" class="popup">
+    </div>
+    <div id="bigView" class="popup">
+        <img id="bigImg" src="" alt=""/>
+    </div>
+    <div id="dark"></div>
+    <div style="display:none">
+        <div id="imgTemplate" class="imgcontainer">
+            <div class="img">
+                <div class="delimg"></div>
+            </div>
+            <div class="title">1234</div>
+        </div>
+    </div>
+</body>
+</html>

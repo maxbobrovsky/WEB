@@ -1,0 +1,22 @@
+<!ELEMENT images (image*) >
+    <!ELEMENT image (title, description, size?, date, file) >
+        <!ATTLIST image id ID  #REQUIRED>
+        <!ELEMENT title (#PCDATA) >
+        <!ELEMENT description (#PCDATA) >
+        <!ELEMENT size (width, heigth) >
+            <!ELEMENT width (#PCDATA)>
+            <!ELEMENT heigth (#PCDATA)>
+        <!--    <!ATTLIST size
+                width CDATA #REQUIRED
+                height CDATA #REQUIRED
+            >-->
+        <!ELEMENT date (day, month, year) >
+            <!ELEMENT day (#PCDATA)>
+            <!ELEMENT month (#PCDATA)>
+            <!ELEMENT year (#PCDATA)>
+        <!--   <!ATTLIST date
+                day CDATA #REQUIRED
+                month CDATA #REQUIRED
+                year CDATA #REQUIRED
+            >-->
+        <!ELEMENT file (#PCDATA) >

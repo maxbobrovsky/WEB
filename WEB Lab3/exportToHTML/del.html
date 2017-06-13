@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" dir="ltr"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body bgcolor="#FFFFFF">
+<font face="Courier New"><font size="2"><font color="#000000"><font color="#FF0000">&lt;?php</font><br />
+<b><font color="#000000">include_once</font></b><font color="#008080">&nbsp;</font><font color="#008000">&quot;config.php&quot;</font><font color="#008080">&nbsp;</font><font color="#000000">;<br />
+</font><br />
+<b><font color="#000000">if</font></b><font color="#008080">&nbsp;</font><font color="#000000">(!</font><font color="#0000FF">get_magic_quotes_gpc</font><font color="#000000">())</font><font color="#008080">&nbsp;</font><font color="#000000">{</font><br />
+<font color="#008080">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#550000">$id</font><font color="#008080">&nbsp;</font><font color="#000000">=</font><font color="#008080">&nbsp;</font><font color="#0000FF">addslashes</font><font color="#000000">(</font><font color="#550000">$_GET</font><font color="#000000">[</font><font color="#008000">'id'</font><font color="#000000">]);</font><br />
+<font color="#000000">}</font><font color="#008080">&nbsp;</font><b><font color="#000000">else</font></b><font color="#008080">&nbsp;</font><font color="#000000">{</font><br />
+<font color="#008080">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#550000">$id</font><font color="#008080">&nbsp;</font><font color="#000000">=</font><font color="#008080">&nbsp;</font><font color="#550000">$_GET</font><font color="#000000">[</font><font color="#008000">'id'</font><font color="#000000">];</font><br />
+<font color="#000000">}<br />
+</font><br />
+<b><font color="#000000">echo</font></b><font color="#008080">&nbsp;</font><font color="#008000">&quot;success&nbsp;&quot;</font><font color="#008080">&nbsp;</font><font color="#000000">.</font><font color="#008080">&nbsp;</font><font color="#550000">$id</font><font color="#000000">;</font><br />
+<font color="#550000">$xml</font><font color="#008080">&nbsp;</font><font color="#000000">=</font><font color="#008080">&nbsp;</font><font color="#0000FF">simplexml_load_file</font><font color="#000000">(</font><font color="#550000">$xmlfilename</font><font color="#000000">);<br />
+</font><br />
+<font color="#550000">$toDelete</font><font color="#008080">&nbsp;</font><font color="#000000">=</font><font color="#008080">&nbsp;</font><font color="#550000">$xml</font><font color="#000000">-&gt;</font>xpath(<font color="#008000">&quot;/images/image[@id='&quot;</font><font color="#008080">&nbsp;</font><font color="#000000">.</font><font color="#008080">&nbsp;</font><font color="#550000">$id</font><font color="#008080">&nbsp;</font><font color="#000000">.</font><font color="#008080">&nbsp;</font><font color="#008000">&quot;']&quot;</font><font color="#000000">);</font><br />
+<b><font color="#000000">foreach</font></b><font color="#008080">&nbsp;</font><font color="#000000">(</font><font color="#550000">$toDelete</font><font color="#008080">&nbsp;</font><b><font color="#000000">as</font></b><font color="#008080">&nbsp;</font><font color="#550000">$i</font><font color="#008080">&nbsp;</font><font color="#000000">=&gt;</font><font color="#008080">&nbsp;</font><font color="#550000">$el</font><font color="#000000">){</font><br />
+<font color="#008080">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000FF">unlink</font><font color="#000000">(</font><font color="#550000">$uploaddir</font><font color="#008080">&nbsp;</font><font color="#000000">.</font><font color="#008080">&nbsp;</font><font color="#550000">$el</font><font color="#000000">-&gt;</font>file);<br />
+<font color="#008080">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#550000">$domEl</font><font color="#008080">&nbsp;</font><font color="#000000">=</font><font color="#008080">&nbsp;</font><font color="#0000FF">dom_import_simplexml</font><font color="#000000">(</font><font color="#550000">$el</font><font color="#000000">);</font><br />
+<font color="#008080">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#550000">$domEl</font><font color="#000000">-&gt;</font>parentNode-&gt;removeChild(<font color="#550000">$domEl</font><font color="#000000">);</font><br />
+<font color="#000000">}</font><br />
+<i><font color="#FF8000">//print_r($toDelete);<br />
+</font></i><br />
+<font color="#550000">$xml</font><font color="#000000">-&gt;</font>asXML(<font color="#550000">$xmlfilename</font><font color="#000000">);</font><font color="#008080">&nbsp;</font><br />
+<font color="#FF0000">?&gt;</font></font></font></font></body></html>

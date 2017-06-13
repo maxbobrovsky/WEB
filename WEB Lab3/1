@@ -1,0 +1,35 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT images (image)+>
+<!ATTLIST images
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT image (title,description,size,date,file)>
+<!ATTLIST image
+    xmlns CDATA #FIXED ''
+    id  #REQUIRED>
+
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST description
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT size EMPTY>
+<!ATTLIST size
+    xmlns CDATA #FIXED ''
+    height  #REQUIRED
+    width  #REQUIRED>
+
+<!ELEMENT date EMPTY>
+<!ATTLIST date
+    xmlns CDATA #FIXED ''
+    day  #REQUIRED
+    month  #REQUIRED
+    year  #REQUIRED>
+
+<!ELEMENT file (#PCDATA)>
+<!ATTLIST file
+    xmlns CDATA #FIXED ''>

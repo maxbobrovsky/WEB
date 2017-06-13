@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE images SYSTEM "images.dtd">
+<images>
+    <image id="img-25-12-12-846626584">
+        <title>Alien1</title>
+        <description>Descr Alien</description>
+        <date>
+            <day>25</day>
+            <month>12</month>
+            <year>12</year>
+        </date>
+        <file>25-12-12-2137172161.bmp</file>
+    </image>
+    <image id="img-25-12-12-455285643">
+        <title>nova_poshta</title>
+        <description/>
+        <date>
+            <day>25</day>
+            <month>12</month>
+            <year>12</year>
+        </date>
+        <file>25-12-12-566580686.jpg</file>
+    </image>
+    <image id="img-25-12-12-1065168418">
+        <title>торт&lt;br /&gt; </title>
+        <description/>
+        <date>
+            <day>25</day>
+            <month>12</month>
+            <year>12</year>
+        </date>
+        <file>25-12-12-860097967.bmp</file>
+    </image>
+    <image id="img-25-12-12-1470898375">
+        <title>RDP2</title>
+        <description/>
+        <date>
+            <day>25</day>
+            <month>12</month>
+            <year>12</year>
+        </date>
+        <file>25-12-12-376437365.png</file>
+    </image>
+</images>
